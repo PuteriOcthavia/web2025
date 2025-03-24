@@ -20,7 +20,7 @@ $data = ambildata($query);
         <thead>
             <th>No</th>
             <th>Nama</th>
-            <th>Kaprodi</th>
+            <th>Kaprodi</th> 
             <th>Jurusan</th>
         </thead>
         <tbody>
