@@ -19,7 +19,7 @@ $datamahasiswa = $datamahasiswa[0];
 </head>
 <body>
     <h1>Edit Data Mahasiswa</h1>
-    <form action="editaksimahasiswa.php" method="post">
+    <form action="edit aksimahasiswa.php" method="post">
         <table>
             <tr>
                 <td>NIM</td>
