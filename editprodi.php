@@ -23,12 +23,12 @@ include "template/sidebar.php";
             <!--begin::Row-->
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="mb-0">DATA MAHASISWA</h3>
+                    <h3 class="mb-0">DATA PRODI</h3>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="index.php">Data Mahasiswa</a></li>
+                        <li class="breadcrumb-item"><a href="index.php">Data Prodi</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Tambah</li>
                     </ol>
                 </div>
@@ -47,7 +47,7 @@ include "template/sidebar.php";
                 <div class="col-md-12">
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h3 class="card-title">Edit Data Mahasiswa</h3>
+                            <h3 class="card-title">Edit Data Prodi</h3>
                         </div>
                         <!-- /.card-header -->
                         <form action="tambahaksimahasiswa.php" method="post">

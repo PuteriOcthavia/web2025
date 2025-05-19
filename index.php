@@ -5,7 +5,7 @@ if (!isset($_SESSION['login'])) {
 }
 include "koneksi.php";
 
-$query = "SELECT m.*, p.nama namaProdi FROM mahasiswa m JOIN prodi p ON m.id_prodi = p.id";
+$query  = "SELECT m.*,p.nama nama_prodi FROM mahasiswa m JOIN prodi p ON m.id_prodi = p.id";
 $data = ambildata($query);
 
 include "template/header.php";
@@ -44,7 +44,10 @@ include "template/sidebar.php";
                 <div class="col-md-12">
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h3 class="card-title">Data Mahasiswa</h3>
+                            <h3 class="card-title">DATA MAHASISWA</h3>
+                            <div class="card-tools">
+                                <a href="tambahmahasiswa.php" class="btn btn-primary">Tambah</a>
+                            </div>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -54,15 +57,17 @@ include "template/sidebar.php";
                                         <th>No</th>
                                         <th>Nim</th>
                                         <th>Nama</th>
-                                        <th>Tanggal Lahir</th>
+                                        <th>tanggal_lahir</th>
                                         <th>Telepon</th>
-                                        <th>Email</th>
-                                        <th>Prodi</th>
+                                        <th>email</th>
+                                        <th>prodi</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $i = 1;
+
+                                    <?php
+                                    $i = 1;
                                     foreach ($data as $d) : ?>
                                         <tr>
                                             <td><?php echo $i++; ?></td>
@@ -71,10 +76,11 @@ include "template/sidebar.php";
                                             <td><?php echo $d["tanggal_lahir"] ?></td>
                                             <td><?php echo $d["telp"] ?></td>
                                             <td><?php echo $d["email"] ?></td>
-                                            <td><?php echo $d["namaProdi"] ?></td>
-                                            <td><a href="deletemahasiswa.php?nim=<?= $d['nim']; ?>" onclick="return confirm('Yakin Ingin Hapus?')" class="btn btn-danger">Delete</a> | <a href="editmahasiswa.php?nim=<?= $d['nim']; ?>" class="btn btn-warning">Edit</a></td>
+                                            <td><?php echo $d["nama_prodi"] ?></td>
+                                            <td><a href="deletemahasiswa.php?nim=<?= $d['nim'];  ?>" onclick="return confirm('yakin ingin hapus?')" class="btn btn-danger">Delete</a> <a href="editmahasiswa.php?nim=<?= $d['nim'];  ?>" class="btn btn-warning">Edit</a></td>
                                         </tr>
                                     <?php endforeach; ?>
+
                                 </tbody>
                             </table>
                         </div>
@@ -86,6 +92,7 @@ include "template/sidebar.php";
                 <!-- /.col -->
                 <!-- /.col -->
             </div>
+
             <!-- /.row (main row) -->
         </div>
         <!--end::Container-->

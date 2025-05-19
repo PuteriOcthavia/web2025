@@ -54,6 +54,7 @@ include "template/sidebar.php";
                                     <th>Nama</th>
                                     <th>Kaprodi</th>
                                     <th>Jurusan</th>
+                                    <th>Aksi</th>
                                 </thead>
                                 <tbody>
                                     <?php
@@ -64,6 +65,7 @@ include "template/sidebar.php";
                                             <td><?php echo $d["nama"] ?></td>
                                             <td><?php echo $d["kaprodi"] ?></td>
                                             <td><?php echo $d["jurusan"] ?></td>
+                                            <td><a href="deleteprodi.php?nim=<?= $d['id'];  ?>" onclick="return confirm('yakin ingin hapus?')" class="btn btn-danger">Delete</a> <a href="editprodi.php?nim=<?= $d['id'];  ?>" class="btn btn-warning">Edit</a></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
